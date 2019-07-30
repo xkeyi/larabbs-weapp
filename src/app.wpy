@@ -62,5 +62,17 @@ export default class extends wepy.app {
       selectedColor: '#00b5ad'
     }
   }
+
+  constructor () {
+    super()
+    this.use('requestfix')
+    this.use('promisify')
+  }
+
+  onLaunch() {
+    wepy.login().then(res => {
+      console.log('login:', res)
+    })
+  }
 }
 </script>
