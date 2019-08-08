@@ -43,5 +43,11 @@
       // 调用组建的 loadMore 方法
       this.$invoke('topiclist', 'loadMore')
     }
+
+    onShow() {
+      this.$parent.checkRefreshPages(this.getCurrentPages().pop().route, () => {
+        this.$invoke('topiclist', 'reload')
+      })
+    }
   }
 </script>
