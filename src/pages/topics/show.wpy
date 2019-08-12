@@ -111,7 +111,7 @@
           return false
         }
 
-        return this.user.id === this.topic.user_id
+        return (this.user.id === this.topic.user_id) || this.$parent.can('manage_contents')
       }
     }
 
